@@ -24,11 +24,6 @@ const Navbar: React.FC = () => {
           <Link to="/advertise">Advertise with us</Link>
         </div>
 
-        {/* Search Icon */}
-        {/* <div className="navbar-search">
-          <SearchIcon style={{ color: "#333", fontSize: 28 }} />
-        </div>*/}
-
         {/* CTA Button */}
         <div className="navbar-cta">
           <button>Post a Job</button>

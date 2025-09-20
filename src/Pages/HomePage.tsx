@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Box } from "@mui/material";
 import HeroSection from "../Components/HeroSection";
+import AdvertisementSection from "../Components/AdvertisementSection";
 import JobCard from "../Components/JobCard";
 
 const HomePage: React.FC = () => {
@@ -13,6 +14,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <HeroSection />
+      <AdvertisementSection />
       <Container sx={{ mt: 5 }}>
         <Box
           sx={{

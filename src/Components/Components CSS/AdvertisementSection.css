@@ -1,0 +1,51 @@
+.advertisement-container {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.advertisement-title {
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #040084; /* deep blue */
+}
+
+/* Horizontal row layout */
+.advertisement-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px; /* space between ads */
+  flex-wrap: wrap; /* wrap on smaller screens */
+}
+
+/* Common card styling */
+.ad-card {
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ad-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Featured ad styling (all equal) */
+.ad-featured {
+  width: 350px;
+  height: 400px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .ad-featured {
+    width: 90%; /* take almost full width on tablet/mobile */
+    height: auto;
+  }
+  
+  .advertisement-row {
+    gap: 20px;
+  }
+}
