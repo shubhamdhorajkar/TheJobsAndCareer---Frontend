@@ -1,7 +1,8 @@
+/* Navbar container */
 .navbar {
   background-color: #fff;
-  color: #333;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: #040084; /* blue text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -14,54 +15,64 @@
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: #040084; /* blue for logo */
 }
 
 /* Right side container (links + search + button) */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px; /* increased gap between all items */
 }
 
-/* Links */
+/* Navigation links */
 .navbar-links {
   display: flex;
-  gap: 15px;
+  gap: 20px; /* spacing between links */
 }
 
 .navbar-links a {
-  color: #333;
+  color: #040084; /* blue links */
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 600; /* slightly bold */
+  transition: color 0.3s ease;
 }
 
 .navbar-links a:hover {
-  color: #ff0042; /* Hover color */
+  color: #ff6200; /* orange on hover */
 }
 
 /* Search icon */
 .navbar-search {
   cursor: pointer;
+  color: #040084;
+  font-size: 20px; /* slightly larger */
+  margin-left: 10px; /* spacing from links */
+  transition: color 0.3s ease;
+}
+
+.navbar-search:hover {
+  color: #ff6200; /* orange hover */
 }
 
 /* CTA Button */
 .navbar-cta button {
-  background-color: #ff0042;
-  color: white;
+  background-color: #ff6200; /* orange button */
+  color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .navbar-cta button:hover {
-  background-color: #cc0037;
+  background-color: #e55a00; /* darker orange on hover */
+  transform: translateY(-2px); /* subtle lift */
 }
 
-/* Responsive */
+/* Responsive design */
 @media (max-width: 768px) {
   .navbar-right {
     flex-direction: column;
@@ -80,5 +91,9 @@
     width: 100%;
     margin-top: 10px;
     text-align: center;
+  }
+
+  .navbar-search {
+    margin-left: 0; /* reset spacing for mobile */
   }
 }

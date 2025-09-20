@@ -1,74 +1,33 @@
 .hero-container {
-  background: linear-gradient(to right, #007bff, #00c6ff);
-  color: white;
+  height: 60vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding: 0 20px;
+  justify-content: center;
+  text-align: center;
+
+  /* Gradient background using your colors */
+  background: linear-gradient(135deg, #ff6200, #040084);
+  color: white;
 }
 
 .hero-content {
-  text-align: center;
   max-width: 800px;
+  padding: 0 20px;
 }
 
 .hero-heading {
-  font-size: 3rem;
   font-weight: bold;
+  font-size: 2.8rem;
   margin-bottom: 20px;
+  color: white; /* keep heading text white */
 }
 
 .hero-subheading {
-  font-size: 1.25rem;
-  margin-bottom: 30px;
+  font-size: 1.3rem;
+  margin-top: 10px;
+  color: #f0f0f0; /* slightly lighter for contrast */
 }
 
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.cta-button {
-  background-color: #ff0042;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: 600;
-  text-transform: none;
-}
-
-.cta-button:hover {
-  background-color: #cc0037;
-}
-
-.secondary-button {
-  border-color: white;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: 600;
-  text-transform: none;
-}
-
-.secondary-button:hover {
-  background-color: white;
-  color: #007bff;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-heading {
-    font-size: 2.5rem;
-  }
-
-  .hero-subheading {
-    font-size: 1rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
+.typed-text {
+  color: #ff6200; /* highlight typed words in orange */
 }

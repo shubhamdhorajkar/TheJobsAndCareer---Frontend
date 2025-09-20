@@ -20,18 +20,18 @@ const Navbar: React.FC = () => {
           <Link to="/services">Services</Link>
           <Link to="/blogs">Blogs</Link>
           <Link to="/upload-cv">Upload CV</Link>
-          <Link to="/mentors">Mentors</Link>
-          <Link to="/advertise">Advertise</Link>
+          <Link to="/mentors">Speak with Mentors</Link>
+          <Link to="/advertise">Advertise with us</Link>
         </div>
 
         {/* Search Icon */}
-        <div className="navbar-search">
+        {/* <div className="navbar-search">
           <SearchIcon style={{ color: "#333", fontSize: 28 }} />
-        </div>
+        </div>*/}
 
         {/* CTA Button */}
         <div className="navbar-cta">
-          <button>Get Started</button>
+          <button>Post a Job</button>
         </div>
       </Box>
     </nav>
