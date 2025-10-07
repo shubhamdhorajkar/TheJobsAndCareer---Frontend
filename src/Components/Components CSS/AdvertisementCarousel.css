@@ -1,0 +1,92 @@
+/* Main container */
+.advertisement-carousel {
+  width: 100%;
+  margin: 40px 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Slider images */
+.advertisement-carousel img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Smooth zoom-in effect on hover */
+.advertisement-carousel img:hover {
+  transform: scale(1.02);
+}
+
+/* Slick Dots Container */
+.slick-dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+
+/* Dots */
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #ff6200;
+  opacity: 0.6;
+  transition: all 0.3s ease-in-out;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #040084;
+  opacity: 1;
+  font-size: 14px;
+}
+
+/* Hide arrows if using fade animation */
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .advertisement-carousel img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .advertisement-carousel img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .advertisement-carousel img {
+    height: 160px;
+  }
+
+  .slick-dots li button:before {
+    font-size: 10px;
+  }
+}

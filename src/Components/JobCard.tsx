@@ -1,24 +1,46 @@
 import React from "react";
-import { Card, CardContent, Typography, Box, Button } from "@mui/material";
+import "./Components CSS/JobListSection.css";
+import { FaBuilding, FaMapMarkerAlt, FaCalendarAlt, FaMoneyBill } from "react-icons/fa";
 
 interface JobCardProps {
   title: string;
   company: string;
   location: string;
+  experience: string;
+  salary: string;
+  description: string;
+  logo: string;
 }
 
-const JobCard: React.FC<JobCardProps> = ({ title, company, location }) => {
+const JobCard: React.FC<JobCardProps> = ({
+  title,
+  company,
+  location,
+  experience,
+  salary,
+  description,
+  logo,
+}) => {
   return (
-    <Card sx={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-      <CardContent>
-        <Typography variant="h6" gutterBottom>{title}</Typography>
-        <Typography variant="body2" color="text.secondary">{company}</Typography>
-        <Typography variant="body2" color="text.secondary">{location}</Typography>
-      </CardContent>
-      <Box sx={{ p: 2 }}>
-        <Button variant="contained" fullWidth>Apply Now</Button>
-      </Box>
-    </Card>
+    <div className="job-card">
+      <div className="job-card-left">
+        <img src={logo} alt={company} className="company-logo" />
+      </div>
+      <div className="job-card-middle">
+        <h3>{title}</h3>
+        <p className="job-meta">
+          <FaBuilding /> {company} &nbsp; | &nbsp;
+          <FaMapMarkerAlt /> {location} &nbsp; | &nbsp;
+          <FaCalendarAlt /> {experience} &nbsp; | &nbsp;
+          <FaMoneyBill /> {salary}
+        </p>
+        <p className="job-desc">{description}</p>
+      </div>
+      <div className="job-card-right">
+        <button className="apply-btn">Apply Now</button>
+        <p className="share-text">Share</p>
+      </div>
+    </div>
   );
 };
 

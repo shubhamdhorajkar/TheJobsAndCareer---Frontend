@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
 import "./Components CSS/Navbar.css";
 
 const Navbar: React.FC = () => {
