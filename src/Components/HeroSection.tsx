@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
               showCursor={false} // 👈 hides the blinking |
             />
           </span>{" "}
-          made simple
+          Made Simple
         </Typography>
         <Typography variant="h6" className="hero-subheading">
           Connecting talent, companies, and opportunities seamlessly.
