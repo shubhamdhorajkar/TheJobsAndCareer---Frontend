@@ -1,33 +1,174 @@
+/* HeroSection.css - full file */
+
+/* Container */
 .hero-container {
   height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-
-  /* Gradient background using your colors */
+  text-align: left; /* text left while overall section centered */
   background: linear-gradient(135deg, #ff6200, #040084);
   color: white;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
+/* Inner layout (left text + right illustration) */
+.hero-inner {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+/* Text block */
 .hero-content {
-  max-width: 800px;
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 720px;
   padding: 0 20px;
 }
 
+/* Headline */
 .hero-heading {
-  font-weight: bold;
+  font-weight: 600;        /* softened from ultra-bold */
   font-size: 2.8rem;
-  margin-bottom: 20px;
-  color: white; /* keep heading text white */
+  margin: 0 0 12px 0;
+  color: white;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
 }
 
+/* Typed words styling */
+.typed-text {
+  color: #ff6200;   /* orange highlight */
+  font-weight: 500; /* softened */
+}
+
+/* Made Simple */
+.made-simple {
+  font-style: italic;
+  color: white;
+  font-weight: 400; /* lighter */
+}
+
+/* Subheading */
 .hero-subheading {
   font-size: 1.3rem;
   margin-top: 10px;
   color: #f0f0f0; /* slightly lighter for contrast */
+  max-width: 560px;
+  font-weight: 400;
 }
 
-.typed-text {
-  color: #ff6200; /* highlight typed words in orange */
+/* RIGHT SIDE ILLUSTRATION - larger + animated */
+.hero-illustration {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  pointer-events: none; /* non-interactive decorative image */
+}
+
+/* Larger animated image */
+.hero-illustration img {
+  width: 360px;               /* increased width */
+  height: auto;
+  max-height: 70vh;          /* ensures it won't exceed viewport height */
+  object-fit: contain;
+  transform-origin: 50% 50%;
+  will-change: transform, filter;
+  transition: transform 420ms cubic-bezier(.2,.8,.2,1), filter 420ms ease;
+  animation: heroFloat 8s ease-in-out infinite;
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,0.12));
+}
+
+/* Hover: subtle pop (desktop only) */
+.hero-illustration img:hover {
+  transform: translateY(-8px) scale(1.02) rotate(-0.6deg);
+  filter: drop-shadow(0 26px 36px rgba(0,0,0,0.16));
+}
+
+/* Keyframes: smooth floating animation */
+@keyframes heroFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-8px) rotate(-0.3deg) scale(1.01);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  75% {
+    transform: translateY(6px) rotate(0.3deg) scale(0.995);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+}
+
+/* Responsive adjustments - tablet */
+@media (max-width: 960px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+
+  .hero-heading {
+    font-size: 2.2rem;
+  }
+
+  .hero-illustration img {
+    width: 300px;
+    max-height: 60vh;
+  }
+}
+
+/* Responsive adjustments - mobile */
+@media (max-width: 480px) {
+  .hero-container {
+    height: auto;
+    padding: 36px 16px;
+  }
+
+  .hero-inner {
+    align-items: center;
+  }
+
+  .hero-heading {
+    font-size: 1.6rem;
+  }
+
+  .hero-subheading {
+    font-size: 1rem;
+  }
+
+  .hero-illustration img {
+    width: 180px;
+    max-height: 40vh;
+    animation-duration: 7s;
+  }
+}
+
+/* Accessibility - ensure text contrast */
+@media (prefers-reduced-motion: reduce) {
+  .hero-illustration img {
+    animation: none;
+    transition: none;
+  }
 }

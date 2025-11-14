@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
       {/* Bottom bar */}
       <div className="footer-bottom">
         <div className="bottom-left">
-          <small>Designed and Developed by Jade Software</small>
+          <small>Designed and Developed by TJC Tech</small>
         </div>
 
         <div className="bottom-center">

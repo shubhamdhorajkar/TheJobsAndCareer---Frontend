@@ -159,3 +159,33 @@
 
 /* Fallback utility: ensure images inside partner-pill cannot expand container */
 .partner-pill img { max-width: 100%; height: auto; display: block; }
+
+/* Corner partner image (top-left decorative icon) */
+.partner-corner-img {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+  opacity: 0.95;
+  pointer-events: none; /* so it doesn’t block scroll or clicks */
+}
+
+/* Make section a positioning context */
+.partners-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Responsive adjustment */
+@media (max-width: 800px) {
+  .partner-corner-img {
+    width: 110px;
+    top: 24px;
+    left: 20px;
+    opacity: 0.85;
+  }
+}
+
