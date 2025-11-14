@@ -10,14 +10,14 @@ const HeroSection: React.FC = () => {
         <Typography variant="h2" className="hero-heading">
           <span className="typed-text">
             <ReactTyped
-              strings={["Job Searching", "Hiring", "Advertisement"]}
+              strings={["Job Search", "Hiring", "Advertising"]}
               typeSpeed={80}
               backSpeed={40}
               loop
               showCursor={false} // 👈 hides the blinking |
             />
           </span>{" "}
-          Made Simple
+          <span style={{ fontStyle: "italic" }}>Made Simple</span>
         </Typography>
         <Typography variant="h6" className="hero-subheading">
           Connecting talent, companies, and opportunities seamlessly.

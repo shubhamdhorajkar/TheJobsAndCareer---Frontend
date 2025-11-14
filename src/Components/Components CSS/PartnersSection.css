@@ -1,0 +1,161 @@
+/* PartnersSection.css — REPLACEMENT (prevents page overflow, robust scroller) */
+
+.partners-section {
+  width: 100%;
+  background: #fff6f0;
+  padding: 40px 0 60px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* IMPORTANT: prevent section children from overflowing page */
+  box-sizing: border-box;
+}
+
+/* Constrain inner container and center it */
+.partners-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* LEFT illustration: fix width and prevent it from growing */
+.partners-left-illustration {
+  flex: 0 0 160px; /* fixed width so it cannot push layout */
+  max-width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* if image inside is bigger, clip it */
+}
+
+/* small circular placeholder - replace with your image or keep */
+.illustration-placeholder {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #fff 0%, #ffe9d9 100%);
+  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.08);
+  flex-shrink: 0;
+}
+
+/* Content column */
+.partners-content {
+  flex: 1 1 auto;            /* take remaining space */
+  min-width: 0;              /* CRITICAL so child .partners-logos can shrink */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading */
+.partners-heading {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  color: #0f1a2b;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+
+.partners-highlight {
+  color: #ff7a00;
+  margin-left: 6px;
+}
+
+.partners-subtitle {
+  margin: 8px 0 18px;
+  color: #6b7280;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Carousel wrapper */
+.partners-carousel-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+/* Arrow buttons */
+.partners-arrow {
+  background: #fff;
+  border: 1px solid #eee;
+  color: #333;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  transition: transform 0.15s ease, background 0.15s ease;
+  user-select: none;
+  flex: 0 0 auto;
+}
+.partners-arrow:hover { transform: translateY(-2px); background: #fffaf5; }
+.partners-arrow.disabled, .partners-arrow:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+/* Logos container: horizontal scroller inside the content area */
+.partners-logos {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;               /* enable internal horizontal scroll */
+  overflow-y: hidden;
+  padding: 14px 6px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  flex: 1 1 auto;                 /* allow to shrink/grow inside partners-content */
+  min-width: 0;                   /* CRITICAL - allow flex child to be smaller than content */
+  scroll-snap-type: x mandatory;
+}
+
+/* Hide scrollbar (but keep it usable) */
+.partners-logos::-webkit-scrollbar { display: none; }
+.partners-logos { scrollbar-width: none; -ms-overflow-style: none; }
+
+/* Each circular logo pill */
+.partner-pill {
+  display: inline-flex;
+  flex: 0 0 auto; /* prevent pills from growing and forcing width */
+  width: 120px;
+  height: 120px;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+  border: 4px solid rgba(255,122,0,0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  scroll-snap-align: center; /* helps scrollIntoView be centered */
+}
+.partner-pill:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(255,122,0,0.12); border-color: rgba(255,122,0,0.14); }
+
+/* Inner logo image */
+.partner-logo { width: 72px; height: 72px; object-fit: contain; display: block; }
+
+/* Accessibility focus */
+.partners-arrow:focus, .partner-pill:focus { outline: 3px solid rgba(255,122,0,0.15); outline-offset: 4px; }
+
+/* Responsive: hide left illustration on smaller screens */
+@media (max-width: 1000px) {
+  .partners-left-illustration { display: none; }
+  .partner-pill { width: 96px; height: 96px; }
+  .partner-logo { width: 56px; height: 56px; }
+}
+
+/* Mobile: hide arrows and rely on swipe */
+@media (max-width: 760px) {
+  .partners-arrow { display: none; }
+  .partners-logos { gap: 16px; padding: 10px 6px; }
+  .partners-section { padding: 28px 0; }
+}
+
+/* Fallback utility: ensure images inside partner-pill cannot expand container */
+.partner-pill img { max-width: 100%; height: auto; display: block; }

@@ -18,14 +18,16 @@ const Navbar: React.FC = () => {
           <Link to="/about">About</Link>
           <Link to="/services">Services</Link>
           <Link to="/blogs">Blogs</Link>
-          <Link to="/upload-cv">Upload CV</Link>
           <Link to="/mentors">Speak with Mentors</Link>
-          <Link to="/advertise">Advertise with us</Link>
+          <Link to="/advertise">Contact us</Link>
         </div>
 
         {/* CTA Button */}
         <div className="navbar-cta">
           <button>Post a Job</button>
+        </div>
+        <div className="navbar-cta">
+          <button>Upload CV</button>
         </div>
       </Box>
     </nav>

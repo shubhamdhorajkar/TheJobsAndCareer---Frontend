@@ -4,6 +4,7 @@
   background: #f9f9f9;
 }
 
+/* Optional title (if you add one above images) */
 .advertisement-title {
   margin-bottom: 40px;
   font-weight: bold;
@@ -19,17 +20,31 @@
   flex-wrap: wrap; /* wrap on smaller screens */
 }
 
+/* Each ad wrapper (image + button) */
+.ad-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.3s ease;
+}
+
+.ad-card-wrapper:hover {
+  transform: translateY(-5px);
+}
+
 /* Common card styling */
 .ad-card {
   border-radius: 10px;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Image hover */
 .ad-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Featured ad styling (all equal) */
@@ -38,13 +53,30 @@
   height: 400px;
 }
 
+/* Book Now button styling */
+.book-now-btn {
+  background: linear-gradient(90deg, #ff8a00, #ff5800);
+  color: #fff !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  border-radius: 20px !important;
+  padding: 8px 20px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.book-now-btn:hover {
+  background: linear-gradient(90deg, #ff9b2a, #ff6b10) !important;
+  transform: translateY(-2px);
+}
+
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .ad-featured {
     width: 90%; /* take almost full width on tablet/mobile */
     height: auto;
   }
-  
+
   .advertisement-row {
     gap: 20px;
   }

@@ -5,6 +5,7 @@
   gap: 24px;
   padding: 40px 80px;
   background-color: #fff;
+  position: relative;
 }
 
 /* Left section */
@@ -18,6 +19,7 @@
   margin-bottom: 16px;
 }
 
+/* Job card */
 .job-card {
   display: flex;
   align-items: flex-start;
@@ -35,17 +37,21 @@
   transform: translateY(-3px);
 }
 
+/* Logo + details layout */
 .company-logo {
   width: 60px;
   height: 60px;
   object-fit: contain;
   margin-right: 16px;
+  flex-shrink: 0;
 }
 
+/* Keep job-details flexible and stack actions at bottom */
 .job-details {
   flex: 1;
 }
 
+/* Title and meta */
 .job-details h3 {
   font-size: 1.1rem;
   margin: 0 0 6px 0;
@@ -73,6 +79,15 @@
   margin: 0;
 }
 
+/* Actions container - Apply + Share */
+.job-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+/* Apply button - existing gradient style preserved */
 .apply-btn {
   background: linear-gradient(90deg, #ff8a00, #ff5800);
   border: none;
@@ -88,6 +103,27 @@
   background: linear-gradient(90deg, #ff9b2a, #ff6b10);
 }
 
+/* Share button */
+.share-btn {
+  background: #f2f2f2;
+  color: #555;
+  border: none;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 8px 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.share-btn:hover {
+  background: #e8e8e8;
+  transform: translateY(-1px);
+}
+
+/* 'More' button */
 .more-btn {
   display: block;
   margin: 20px auto 0;
@@ -111,13 +147,31 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center; /* center ads and title */
+  position: relative;
 }
 
+/* Title shown above ads */
+.ads-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ff6600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ff6600;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Ad card and image */
 .ad-card {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 320px;
 }
 
 .ad-image {
@@ -130,4 +184,268 @@
 
 .ad-image:hover {
   transform: scale(1.03);
+}
+
+/* Banner styles (existing) */
+.featured-banner {
+  text-align: center;
+  border: 1px solid #ff6600;
+  background: linear-gradient(to right, #fff9f5, #ffece0);
+  padding: 16px 20px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(255, 102, 0, 0.1);
+}
+
+.banner-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+  font-style: italic;
+  margin: 0;
+}
+
+.highlight-text {
+  color: #ff6600;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Vertical divider between job listings and advertisements */
+.vertical-line {
+  width: 2px;
+  background: linear-gradient(to bottom, #fff2e6 0%, #ff8a00 50%, #fff2e6 100%);
+  opacity: 0.5;
+  align-self: stretch; /* make it stretch to container height */
+  margin: 0 12px;
+  border-radius: 2px;
+}
+
+/* Responsive: ensure vertical-line stretches with content height */
+.job-section-container > .vertical-line {
+  min-height: 320px; /* fallback height if flex children small */
+}
+
+/* Small screens: stack columns and hide vertical line */
+@media (max-width: 900px) {
+  .job-section-container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .job-listings,
+  .advertisements {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+
+  .ad-image {
+    height: 140px;
+  }
+}
+
+/* Minor polish for icons in meta and share icon size */
+.job-meta svg,
+.share-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Ensure the logo and details align nicely on small card widths */
+.job-card {
+  gap: 12px;
+}
+/* Wrapper for whole section */
+.job-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background-color: #fff;
+}
+
+/* Two top banners above the main job section */
+.top-ad-section {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 80px;
+}
+
+.top-ad-card {
+  flex: 1;
+  background: linear-gradient(to right, #fff9f5, #fff5ef);
+  border: 1px solid #ffb27f;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(255, 102, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.top-ad-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.top-ad-image:hover {
+  transform: scale(1.02);
+}
+
+/* Stack the two banners on mobile */
+@media (max-width: 900px) {
+  .top-ad-section {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .top-ad-image {
+    height: 140px;
+  }
+}
+
+/* Modal overlay and content */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  padding: 20px;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 920px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+}
+
+/* Header */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+/* Close button */
+.modal-close-btn {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.modal-close-btn:hover {
+  background: #f3f3f3;
+}
+
+/* Body */
+.modal-body {
+  padding: 14px 20px;
+  overflow: auto;
+}
+
+/* Subtext */
+.modal-subtext {
+  margin: 0 0 12px 0;
+  color: #555;
+}
+
+/* Scrollable job list */
+.modal-job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Each job row inside modal */
+.modal-job-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fffaf7;
+  border: 1px solid #f2e8df;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.modal-job-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal-job-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.modal-job-meta {
+  font-size: 0.9rem;
+  color: #666;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Right side (salary + apply) */
+.modal-job-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Small apply variation */
+.apply-btn.small {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-radius: 16px;
+}
+
+/* Footer */
+.modal-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Responsive modal */
+@media (max-width: 760px) {
+  .modal-content {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
 }

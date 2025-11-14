@@ -3,6 +3,8 @@ import HeroSection from "../Components/HeroSection";
 import AdvertisementSection from "../Components/AdvertisementSection";
 import AdvertisementCarousel  from "../Components/AdvertisementCarousel";
 import JobListingSection from "../Components/JobListSection";
+import PartnersSection from "../Components/PartnersSection";
+import TestimonialsSection from "../Components/TestimonialsSection";
 
 
 const HomePage: React.FC = () => {
@@ -13,6 +15,8 @@ const HomePage: React.FC = () => {
       <AdvertisementCarousel />
       <JobListingSection />
       <AdvertisementSection />
+      <PartnersSection />
+      <TestimonialsSection/>
     </>
   );
 };
