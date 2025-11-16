@@ -1,0 +1,167 @@
+/* ServicesSection.css - premium services grid with animations */
+
+/* SECTION BASE */
+.services-section {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 20px;
+  background: linear-gradient(180deg, #ffffff, #fffaf7); /* soft warm background */
+  color: #0f1a2b;
+  box-sizing: border-box;
+}
+
+/* Inner constraint */
+.services-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Heading */
+.services-heading {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  color: #0f1a2b;
+}
+.services-heading .accent {
+  color: #ff7a00;
+  margin-left: 6px;
+  font-style: italic;
+}
+
+/* Subtitle */
+.services-sub {
+  margin: 10px auto 28px;
+  color: #6b7280;
+  max-width: 760px;
+  font-size: 0.98rem;
+}
+
+/* decorative background circles */
+.services-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(28px);
+  opacity: 0.08;
+  transform: translateZ(0);
+}
+.bg-circle.c1 {
+  width: 420px;
+  height: 420px;
+  top: -80px;
+  right: 6%;
+  background: radial-gradient(circle at 30% 30%, #ff7a00, #ffd6b7);
+  animation: slowFloat 10s ease-in-out infinite;
+}
+.bg-circle.c2 {
+  width: 300px;
+  height: 300px;
+  bottom: -60px;
+  left: 8%;
+  background: radial-gradient(circle at 70% 70%, #1e7ce4, #cfe7ff);
+  animation: slowFloat 12s ease-in-out infinite reverse;
+}
+.bg-circle.c3 {
+  width: 200px;
+  height: 200px;
+  top: 20%;
+  left: 12%;
+  background: radial-gradient(circle at 40% 40%, #17a673, #c7f1e2);
+  animation: slowFloat 14s ease-in-out infinite;
+}
+
+@keyframes slowFloat {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* GRID */
+.services-grid {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 28px;
+  align-items: start;
+  z-index: 2;
+}
+
+/* single-column on mobile */
+@media (max-width: 880px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+/* CARD */
+.service-card {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), #fffaf7);
+  border-radius: 12px;
+  padding: 18px 18px;
+  box-shadow: 0 10px 30px rgba(15,26,43,0.05);
+  border: 1px solid rgba(10,40,70,0.03);
+  transform: translateY(18px) scale(0.995);
+  opacity: 0;
+  transition: transform 520ms cubic-bezier(.2,.9,.2,1), opacity 520ms ease, box-shadow 280ms ease;
+  will-change: transform, opacity;
+}
+
+/* in-view state triggered by IntersectionObserver */
+.service-card.in-view {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* icon area */
+.service-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,0.6));
+  box-shadow: 0 6px 18px rgba(255,122,0,0.06);
+  color: #ff7a00;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  border: 6px solid rgba(255,122,0,0.06);
+}
+
+/* content */
+.service-title {
+  margin: 0 0 6px 0;
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: #0f1a2b;
+}
+
+.service-desc {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* hover state for card */
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 48px rgba(15,26,43,0.08);
+}
+
+/* accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .service-card, .bg-circle { animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; }
+}
