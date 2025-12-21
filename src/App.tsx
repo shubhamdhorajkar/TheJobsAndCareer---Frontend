@@ -9,7 +9,7 @@ import ServicesPage from "./Pages/ServicesPage";
 import BlogsPage from "./Pages/BlogsPage";
 import UploadCVPage from "./Pages/UploadCVPage";
 import MentorPage from "./Pages/MentorPage";
-import AdvertisePage from "./Pages/AdvertisePage";
+import AdvertisePage from "./Components/ContactUs";
 
 const App: React.FC = () => {
   return (

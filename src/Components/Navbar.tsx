@@ -17,15 +17,20 @@ const Navbar: React.FC = () => {
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/services">Services</Link>
-          <Link to="/blogs">Blogs</Link>
-          <Link to="/mentors">Speak with Mentors</Link>
+          {/* <Link to="/blogs">Blogs</Link> */}
+          <a
+  href="https://wa.me/919876543210"  // 👈 replace with your number (in international format, no + or spaces)
+  target="_blank"
+  rel="noopener noreferrer"
+  className="nav-link"
+>Speak with Mentor</a>
           <Link to="/advertise">Contact us</Link>
         </div>
 
         {/* CTA Button */}
-        <div className="navbar-cta">
+        {/*<div className="navbar-cta">
           <button>Post a Job</button>
-        </div>
+        </div>*/}
         <div className="navbar-cta">
           <button>Upload CV</button>
         </div>

@@ -1,14 +1,27 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
+import React, { useEffect, useRef } from "react";
+import { Box, Typography, Button } from "@mui/material";
 import { ReactTyped } from "react-typed";
 import "./Components CSS/HeroSection.css";
-
-import heroIllustration from "../assets/hero-job-illustration.png"; // adjust path if needed
+import heroIllustration from "../assets/hero-job-illustration.png";
 
 const HeroSection: React.FC = () => {
+  const heroRef = useRef<HTMLDivElement | null>(null);
+
+  // Reveal animation on load
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (hero) {
+      hero.classList.add("visible");
+    }
+  }, []);
+
   return (
-    <Box className="hero-container">
+    <Box className="hero-container" ref={heroRef}>
+      {/* Animated gradient background overlay */}
+      <div className="hero-bg" />
+
       <Box className="hero-inner">
+        {/* Left Text Content */}
         <Box className="hero-content">
           <Typography variant="h2" className="hero-heading">
             <span className="typed-text">
@@ -24,14 +37,22 @@ const HeroSection: React.FC = () => {
           </Typography>
 
           <Typography variant="h6" className="hero-subheading">
-            Connecting talent, companies, and opportunities seamlessly.
+            Connecting <strong>talent</strong>, <strong>companies</strong>, and{" "}
+            <strong>opportunities</strong> seamlessly.
           </Typography>
+
         </Box>
 
+        {/* Right Illustration */}
         <Box className="hero-illustration" aria-hidden>
           <img src={heroIllustration} alt="Job illustration" />
         </Box>
       </Box>
+
+      {/* Floating decorative shapes */}
+      <div className="shape shape-1" />
+      <div className="shape shape-2" />
+      <div className="shape shape-3" />
     </Box>
   );
 };

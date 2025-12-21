@@ -30,7 +30,7 @@ const AdvertisementSection: React.FC = () => {
               className="book-now-btn"
               onClick={() => handleBookNow(ad.alt)}
             >
-              Book Now
+              Connect Now !
             </Button>
           </Box>
         ))}
