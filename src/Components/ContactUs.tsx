@@ -11,31 +11,40 @@ import {
 import emailjs from "@emailjs/browser";
 import "./Components CSS/ContactUs.css";
 
-const ContactUs: React.FC = () => {
-  const formRef = useRef<HTMLFormElement | null>(null);
+const SERVICE_ID = "service_qxqtd8q";
+const TEMPLATE_ID = "template_u9hbpzs";
+const PUBLIC_KEY = "n-hNuXQVDVyvQs8KG"; // ⚠️ MUST be PUBLIC KEY only
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+const ContactUs: React.FC = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!formRef.current) return;
+    if (!formRef.current) {
+      console.error("Form reference not found");
+      return;
+    }
 
-    emailjs
-      .sendForm(
-        "service_xxxxx",     // 🔁 REPLACE with your Service ID
-        "template_xxxxx",    // 🔁 REPLACE with your Template ID
+    try {
+      const result = await emailjs.sendForm(
+        SERVICE_ID,
+        TEMPLATE_ID,
         formRef.current,
-        "PUBLIC_KEY_xxxxx"   // 🔁 REPLACE with your Public Key
-      )
-      .then(
-        () => {
-          alert("✅ Message sent successfully! We will get back to you soon.");
-          formRef.current?.reset();
-        },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          alert("❌ Failed to send message. Please try again later.");
-        }
+        PUBLIC_KEY
       );
+
+      console.log("EMAIL SENT SUCCESSFULLY:", result);
+      alert("✅ Message sent successfully! We will get back to you soon.");
+      formRef.current.reset();
+    } catch (error: any) {
+      console.error("EMAILJS ERROR DETAILS:", error);
+
+      alert(
+        error?.text ||
+          "❌ Failed to send message. Please check console for details."
+      );
+    }
   };
 
   return (
@@ -65,7 +74,7 @@ const ContactUs: React.FC = () => {
             </li>
             <li>
               <FaMapMarkerAlt />
-              <span>Pune, Maharashtra, India</span>
+              <span>Panjim, Goa, India</span>
             </li>
           </ul>
 
@@ -78,6 +87,7 @@ const ContactUs: React.FC = () => {
             >
               <FaWhatsapp />
             </a>
+
             <a
               href="https://www.linkedin.com/company/thejobsandcareer/"
               target="_blank"
@@ -86,6 +96,7 @@ const ContactUs: React.FC = () => {
             >
               <FaLinkedin />
             </a>
+
             <a
               href="https://www.instagram.com/thejobsandcareer/"
               target="_blank"
@@ -103,41 +114,38 @@ const ContactUs: React.FC = () => {
             Send Us a Message
           </Typography>
 
-          <form ref={formRef} onSubmit={sendEmail}>
-            {/* Required for {{name}} */}
+          <form ref={formRef} onSubmit={sendEmail} noValidate>
+            {/* {{name}} */}
             <TextField
               fullWidth
               label="Your Name"
-              variant="outlined"
               name="name"
-              className="form-input"
               required
+              className="form-input"
             />
 
-            {/* Required for {{email}} */}
+            {/* {{email}} */}
             <TextField
               fullWidth
               label="Your Email"
-              variant="outlined"
               name="email"
               type="email"
-              className="form-input"
               required
+              className="form-input"
             />
 
-            {/* Required for {{message}} */}
+            {/* {{message}} */}
             <TextField
               fullWidth
               label="Your Message"
-              variant="outlined"
               name="message"
               multiline
               rows={4}
-              className="form-input"
               required
+              className="form-input"
             />
 
-            {/* Optional {{time}} */}
+            {/* {{time}} */}
             <input
               type="hidden"
               name="time"

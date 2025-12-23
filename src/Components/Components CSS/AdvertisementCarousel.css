@@ -1,92 +1,119 @@
-/* Main container */
+/* ===============================
+   Main carousel container
+================================ */
 .advertisement-carousel {
   width: 100%;
   margin: 40px 0;
   overflow: hidden;
   position: relative;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  background: #fffaf5;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
 }
 
-/* Slider images */
-.advertisement-carousel img {
+/* ===============================
+   Slick slide wrapper (IMPORTANT)
+================================ */
+.advertisement-carousel .slick-slide {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 320px; /* 🔑 FIXED HEIGHT FOR ALL SLIDES */
+}
+
+/* ===============================
+   Image wrapper (optional but premium)
+================================ */
+.advertisement-carousel .carousel-img-wrapper {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   Images (FIXED + CENTERED)
+================================ */
+.advertisement-carousel img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* 🔑 prevents cropping */
   border-radius: 12px;
   transition: transform 0.4s ease-in-out;
 }
 
-/* Smooth zoom-in effect on hover */
+/* Hover zoom */
 .advertisement-carousel img:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
-/* Slick Dots Container */
+/* ===============================
+   Slick dots
+================================ */
 .slick-dots {
   position: absolute;
-  bottom: 15px;
+  bottom: 14px;
   width: 100%;
   display: flex !important;
   justify-content: center;
-  align-items: center;
-  gap: 8px;
+  gap: 10px;
   list-style: none;
   margin: 0;
   padding: 0;
   z-index: 10;
 }
 
-/* Dots */
-.slick-dots li {
-  margin: 0 5px;
-}
-
 .slick-dots li button {
-  background-color: transparent;
+  background: none;
   border: none;
-  padding: 0;
   cursor: pointer;
 }
 
 .slick-dots li button:before {
-  font-size: 12px;
+  font-size: 11px;
   color: #ff6200;
-  opacity: 0.6;
-  transition: all 0.3s ease-in-out;
+  opacity: 0.5;
+  transition: all 0.3s ease;
 }
 
 .slick-dots li.slick-active button:before {
   color: #040084;
   opacity: 1;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-/* Hide arrows if using fade animation */
+/* ===============================
+   Hide arrows (fade carousel)
+================================ */
 .slick-prev,
 .slick-next {
   display: none !important;
 }
 
-/* Responsive design */
+/* ===============================
+   Responsive Heights
+================================ */
 @media (max-width: 1024px) {
-  .advertisement-carousel img {
-    height: 250px;
+  .advertisement-carousel .slick-slide {
+    height: 260px;
   }
 }
 
 @media (max-width: 768px) {
-  .advertisement-carousel img {
-    height: 200px;
+  .advertisement-carousel .slick-slide {
+    height: 220px;
   }
 }
 
 @media (max-width: 480px) {
-  .advertisement-carousel img {
-    height: 160px;
+  .advertisement-carousel .slick-slide {
+    height: 180px;
   }
 
   .slick-dots li button:before {
-    font-size: 10px;
+    font-size: 9px;
   }
 }

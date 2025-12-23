@@ -37,8 +37,8 @@ const HeroSection: React.FC = () => {
           </Typography>
 
           <Typography variant="h6" className="hero-subheading">
-            Connecting <strong>talent</strong>, <strong>companies</strong>, and{" "}
-            <strong>opportunities</strong> seamlessly.
+            <strong>Calrity</strong>, <strong>strategy</strong>, and{" "}
+            <strong>execution</strong> - all in one ecosystem.
           </Typography>
 
         </Box>

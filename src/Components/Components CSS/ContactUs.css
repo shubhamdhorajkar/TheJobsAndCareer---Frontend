@@ -2,13 +2,22 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  min-height: 85vh; /* 🔑 centers vertically */
   padding: 80px 20px;
-  background: linear-gradient(180deg, #fff9f5 0%, #fff3ea 50%, #ffffff 100%);
+  background: linear-gradient(
+    180deg,
+    #fff9f5 0%,
+    #fff3ea 50%,
+    #ffffff 100%
+  );
   color: #0f1a2b;
+
   display: flex;
-  justify-content: center;
+  align-items: center;     /* 🔑 vertical center */
+  justify-content: center; /* 🔑 horizontal center */
 }
 
+/* Background glow stays */
 .contactus-bg {
   position: absolute;
   inset: 0;
@@ -27,35 +36,32 @@
   background-size: 200% 200%;
 }
 
-@keyframes moveGlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
 .contactus-container {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-  max-width: 1100px;
   z-index: 2;
+
+  display: flex;
+  align-items: center;          /* 🔑 vertical alignment */
+  justify-content: center;      /* 🔑 prevents drifting */
+  gap: 60px;
+
+  max-width: 1100px;
+  width: 100%;
 }
 
-/* Left Section */
+/* LEFT SECTION */
 .contactus-info {
-  flex: 1 1 350px;
+  flex: 1;
+  max-width: 420px; /* 🔑 keeps text visually centered */
 }
 
+/* Heading */
 .contactus-heading {
   font-weight: 800;
   font-size: 2rem;
   margin-bottom: 10px;
 }
+
 .accent {
   color: #ff6200;
   font-style: italic;
@@ -63,70 +69,53 @@
 
 .contactus-subtext {
   color: #555;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
   font-size: 1rem;
+  line-height: 1.5;
 }
 
+/* Contact list */
 .contactus-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 30px 0;
+  margin: 0 0 28px 0;
 }
+
 .contactus-list li {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   color: #333;
   margin-bottom: 12px;
   font-size: 0.95rem;
 }
+
 .contactus-list svg {
   color: #ff6200;
   font-size: 1.1rem;
 }
 
-/* Social Buttons */
+/* Socials */
 .contactus-socials {
   display: flex;
   gap: 16px;
 }
-.social-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: white;
-  transition: all 0.3s ease;
-}
-.social-btn.whatsapp {
-  background: #25d366;
-}
-.social-btn.linkedin {
-  background: #0077b5;
-}
-.social-btn.instagram {
-  background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf);
-}
-.social-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
 
-/* Right Section */
+/* RIGHT FORM */
 .contactus-form {
-  flex: 1 1 400px;
+  flex: 1;
+  max-width: 480px; /* 🔑 balance both sides */
+
   background: #ffffff;
-  padding: 30px 35px;
+  padding: 34px 38px;
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(255, 100, 0, 0.08);
-  border: 1px solid rgba(255, 98, 0, 0.08);
+  box-shadow: 0 14px 30px rgba(255, 100, 0, 0.12);
+  border: 1px solid rgba(255, 98, 0, 0.1);
 }
 
 .form-heading {
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   color: #0f1a2b;
   text-align: center;
 }
@@ -137,31 +126,39 @@
 
 .send-btn {
   background: linear-gradient(90deg, #ff7a00, #ff6200);
-  padding: 10px 28px;
+  padding: 11px 28px;
   border-radius: 10px;
   font-weight: 600;
   text-transform: none;
   display: block;
-  margin: 10px auto 0;
+  margin: 14px auto 0;
 }
+
 .send-btn:hover {
   background: linear-gradient(90deg, #ff6200, #ff7a00);
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 900px) {
+  .contactus-page {
+    padding: 60px 16px;
+  }
+
   .contactus-container {
     flex-direction: column;
-    align-items: center;
+    gap: 40px;
     text-align: center;
   }
+
   .contactus-info,
   .contactus-form {
-    flex: 1 1 100%;
+    max-width: 100%;
   }
+
   .contactus-list li {
     justify-content: center;
   }
+
   .contactus-socials {
     justify-content: center;
   }

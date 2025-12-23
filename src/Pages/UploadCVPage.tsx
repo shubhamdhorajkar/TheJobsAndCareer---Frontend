@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Typography } from "@mui/material";
-import UploadCVForm from "../Components/UploadCVForm";
+import UploadCVForm from "../Components/ResumeUploadPage";
 
 const UploadCVPage: React.FC = () => {
   return (
