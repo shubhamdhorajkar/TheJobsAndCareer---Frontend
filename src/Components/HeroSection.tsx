@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { ReactTyped } from "react-typed";
 import "./Components CSS/HeroSection.css";
 import heroIllustration from "../assets/hero-job-illustration.png";
