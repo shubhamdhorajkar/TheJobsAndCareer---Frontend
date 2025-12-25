@@ -16,7 +16,6 @@ import partner11 from "../assets/10.png";
 import partner12 from "../assets/12.png";
 
 // 🟠 NEW: Import your corner illustration
-// import IMGPartner from "../assets/IMGPartner.png";
 
 const PartnersSection: React.FC = () => {
   const logos = [

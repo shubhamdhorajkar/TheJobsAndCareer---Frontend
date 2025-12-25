@@ -119,7 +119,7 @@ const ServicesSection: React.FC = () => {
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
 
-    items.forEach((it, i) => obs.observe(it));
+    items.forEach((it) => obs.observe(it));
     return () => obs.disconnect();
   }, []);
 
