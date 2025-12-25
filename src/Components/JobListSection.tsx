@@ -6,16 +6,17 @@ import {
   FaCalendarAlt,
   FaRupeeSign,
   FaShareAlt,
+ 
 } from "react-icons/fa";
 import "./Components CSS/JobListSection.css";
 
-import company1 from "../assets/company1.png";
-import company2 from "../assets/company2.png";
-import company3 from "../assets/company3.png";
+import company1 from "../assets/partner4.png";
+import company2 from "../assets/partner1.png";
+import company3 from "../assets/Muenzer.png";
 
-import adAyesha from "../assets/add-ayesha.png";
-import adNoshima from "../assets/add-noshima.png";
-import adTjc from "../assets/tjc-add1.png";
+import adAyesha from "../assets/1.png";
+import adNoshima from "../assets/2.png";
+import adTjc from "../assets/3.png";
 
 /* Top banner images */
 import bookConsultation from "../assets/bookConsultation.png";
@@ -36,23 +37,33 @@ const JobListingSection: React.FC = () => {
       logo: company1,
     },
     {
-      title: "Full Stack Developer",
-      company: "TechVerse",
-      location: "Pune – Hybrid",
-      experience: "3+ Years",
-      salary: "UPTO 10 LPA",
+      title: "Domestic Marketing Executiver",
+      company: "Jumbo Bag Ltd",
+      location: "Chennai – Onsite",
+      experience: "2+ Years",
+      salary: "UPTO 3 LPA",
       description:
-        "Work on modern web applications with a dynamic product team building scalable software solutions.",
+        "Drive B2B marketing campaigns, manage product outreach, and grow domestic sales for one of India’s leading FIBC manufacturers. Step into a strategic marketing role.",
+      logo: company1,
+    },
+    {
+      title: "Retail Sales Executive",
+      company: "United Colors of Benetton",
+      location: "Porvorim – Onsite",
+      experience: "0–2+ Years",
+      salary: "Up to 2 LPA",
+      description:
+        "Love fashion and customer service? Join a premium retail brand and build your career in lifestyle retail. No prior experience required! Freshers welcome — grow with global style.",
       logo: company2,
     },
     {
-      title: "HR Manager",
-      company: "InfiniCorp",
-      location: "Bangalore – Onsite",
-      experience: "5+ Years",
-      salary: "UPTO 15 LPA",
+      title: "Procurement Officer",
+      company: "Muenzer Bharat Private Limited",
+      location: "South Goa – Onsite",
+      experience: "0–2+ Years",
+      salary: "Upto 3.60 LPA",
       description:
-        "Lead and manage recruitment, employee engagement, and workforce planning for a leading IT organization.",
+        "Start your career with real field action! Vendor onboarding, concept selling, and impact. No desk job — this one's for doers.",
       logo: company3,
     },
   ];
@@ -64,67 +75,7 @@ const JobListingSection: React.FC = () => {
   ];
 
   // Example list of 10 similar jobs for modal
-   const similarJobs = [
-    {
-      title: "Frontend Developer",
-      company: "PixelWorks",
-      location: "Remote",
-      salary: "UPTO 8 LPA",
-    },
-    {
-      title: "Backend Developer",
-      company: "DataFlow",
-      location: "Hyderabad",
-      salary: "UPTO 9 LPA",
-    },
-    {
-      title: "UI/UX Designer",
-      company: "DesignKit",
-      location: "Bengaluru",
-      salary: "UPTO 6 LPA",
-    },
-    {
-      title: "QA Engineer",
-      company: "TestRight",
-      location: "Pune",
-      salary: "UPTO 5 LPA",
-    },
-    {
-      title: "DevOps Engineer",
-      company: "CloudEdge",
-      location: "Remote",
-      salary: "UPTO 12 LPA",
-    },
-    {
-      title: "Product Manager",
-      company: "Roadmap",
-      location: "Mumbai",
-      salary: "UPTO 14 LPA",
-    },
-    {
-      title: "Data Analyst",
-      company: "Insight Labs",
-      location: "Chennai",
-      salary: "UPTO 7 LPA",
-    },
-    {
-      title: "Content Writer",
-      company: "WordForge",
-      location: "Remote",
-      salary: "UPTO 4 LPA",
-    },
-    {
-      title: "Sales Executive",
-      company: "GrowFast",
-      location: "Bengaluru",
-      salary: "UPTO 6 LPA",
-    },
-    {
-      title: "Customer Success",
-      company: "ClientFirst",
-      location: "Pune",
-      salary: "UPTO 5 LPA",
-    },
+  const similarJobs = [
     {
       id: 11,
       date: "01-12-2025",
@@ -136,7 +87,7 @@ const JobListingSection: React.FC = () => {
       experience: "Fresher / Internship",
       phone: "7507392559",
       website: "https://career.sjinnovation.com/jobDetails/259",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 12,
@@ -149,7 +100,7 @@ const JobListingSection: React.FC = () => {
       phone: "7875447484",
       email: "hr@myleshigh.in",
       website: "—",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 13,
@@ -162,7 +113,7 @@ const JobListingSection: React.FC = () => {
       phone: "7875447484",
       email: "hr@myleshigh.in",
       website: "—",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 14,
@@ -175,7 +126,7 @@ const JobListingSection: React.FC = () => {
       phone: "7875447484",
       email: "hr@myleshigh.in",
       website: "—",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 15,
@@ -188,7 +139,7 @@ const JobListingSection: React.FC = () => {
       phone: "7875447484",
       email: "hr@myleshigh.in",
       website: "—",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 16,
@@ -201,7 +152,7 @@ const JobListingSection: React.FC = () => {
       phone: "7499918377",
       email: "placements@jobexperthr.com",
       website: "—",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 17,
@@ -227,7 +178,7 @@ const JobListingSection: React.FC = () => {
       phone: "9112006532",
       email: "hr.recuiter@stonewoodresorts.com",
       website: "—",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 19,
@@ -240,7 +191,7 @@ const JobListingSection: React.FC = () => {
       phone: "9112006532",
       email: "hr.recruiter@stonewoodresorts.com",
       website: "—",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 20,
@@ -253,7 +204,7 @@ const JobListingSection: React.FC = () => {
       phone: "8378004712",
       email: "",
       website: "—",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 21,
@@ -266,7 +217,7 @@ const JobListingSection: React.FC = () => {
       phone: "",
       email: "joswin.rodrigues@marriott.com",
       website: "—",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 22,
@@ -279,7 +230,7 @@ const JobListingSection: React.FC = () => {
       phone: "9356518026",
       email: "hr@smvvedu.com",
       website: "—",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 23,
@@ -292,7 +243,7 @@ const JobListingSection: React.FC = () => {
       phone: "8956453904",
       email: "hr.thetanisi@gmail.com",
       website: "—",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 24,
@@ -305,7 +256,7 @@ const JobListingSection: React.FC = () => {
       phone: "8956632478",
       email: "hr@hrhgoa.in",
       website: "—",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 25,
@@ -318,7 +269,7 @@ const JobListingSection: React.FC = () => {
       phone: "7447497923",
       email: "career.pgk@gmail.com",
       website: "—",
-      salary: "–",
+      salary: "As per industry standards",
     },
     {
       id: 26,
@@ -331,7 +282,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Any Hospitality qualification / Experience based",
       experience: "Experience preferred",
       website: "—",
-      salary: "—",
+      salary: "As per industry standards",
     },
     {
       id: 27,
@@ -344,7 +295,7 @@ const JobListingSection: React.FC = () => {
       qualification: "CA / MBA Finance / M.Com",
       experience: "4–5 years",
       website: "—",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -358,7 +309,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Any qualification (Training provided)",
       experience: "Fresher / Experienced",
       website: "—",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -372,7 +323,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Graduate / Designing related course",
       experience: "Fresher / Internship",
       website: "—",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -400,7 +351,7 @@ const JobListingSection: React.FC = () => {
       qualification: "B.Com",
       experience: "1–2 years",
       website: "—",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -442,7 +393,7 @@ const JobListingSection: React.FC = () => {
       qualification: "HSSC / B.Com",
       experience: "Experience preferred",
       website: "—",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -456,7 +407,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Graduate",
       experience: "0–1 year",
       website: "—",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -470,7 +421,7 @@ const JobListingSection: React.FC = () => {
       qualification: "HSSC / B.Com",
       experience: "Experience preferred",
       website: "—",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -498,7 +449,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Graduate",
       experience: "1–3 years",
       website: "—",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1258,7 +1209,7 @@ const JobListingSection: React.FC = () => {
       qualification: "12th Pass / Any Graduate",
       experience: "Freshers can apply",
       website: "CV via WhatsApp 77190 85444",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1272,7 +1223,7 @@ const JobListingSection: React.FC = () => {
       qualification: "BE / BTech (Mechanical / Electrical / Industrial)",
       experience: "1–3 years preferred",
       website: "humancapital@paikane.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1314,7 +1265,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Spa Certification preferred",
       experience: "Experience preferred",
       website: "hr.morjim@theacaciahotels.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1328,7 +1279,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Spa / Hospitality Qualification",
       experience: "Experience preferred",
       website: "hr.morjim@theacaciahotels.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1342,7 +1293,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Graduate / Hospitality / Sales background",
       experience: "2–5 years",
       website: "hr.morjim@theacaciahotels.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1426,7 +1377,7 @@ const JobListingSection: React.FC = () => {
       qualification: "12th Pass / Any Graduate",
       experience: "Freshers can apply",
       website: "WhatsApp 77190 85444",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1440,7 +1391,7 @@ const JobListingSection: React.FC = () => {
       qualification: "12th Pass / Any Graduate",
       experience: "Minimum 1 year",
       website: "WhatsApp 77190 85444",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1748,7 +1699,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Graduate / Hotel Management",
       experience: "3–5 years",
       website: "WhatsApp 77190 85444",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1762,7 +1713,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Graduate / Hotel Management",
       experience: "2–3 years",
       website: "WhatsApp 77190 85444",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1776,7 +1727,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Minimum 12th",
       experience: "Fresher",
       website: "trupti.vernekar@ril.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1818,7 +1769,7 @@ const JobListingSection: React.FC = () => {
       qualification: "B.Com",
       experience: "Experience preferred",
       website: "hr@myleshigh.in",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1846,7 +1797,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Hospitality background",
       experience: "Experience preferred",
       website: "hr@xpansecafe.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1874,7 +1825,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Relevant technical skill",
       experience: "Experience preferred",
       website: "8806014400",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1888,7 +1839,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Relevant technical skill",
       experience: "Experience preferred",
       website: "8806014400",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1902,7 +1853,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Any",
       experience: "Freshers welcome",
       website: "8806014400",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1916,7 +1867,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Driving licence",
       experience: "Experience preferred",
       website: "8806014400",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1958,7 +1909,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Commerce / Finance",
       experience: "Experience required",
       website: "hr@yu-hotel.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1972,7 +1923,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Bar / Hospitality",
       experience: "Experience required",
       website: "hr@yu-hotel.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -1986,7 +1937,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Hospitality",
       experience: "Experience required",
       website: "hr@yu-hotel.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -2000,7 +1951,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Culinary",
       experience: "Experience required",
       website: "hr@yu-hotel.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -2014,7 +1965,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Culinary",
       experience: "Experience required",
       website: "hr@yu-hotel.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -2028,7 +1979,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Culinary",
       experience: "Experience required",
       website: "hr@yu-hotel.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -2042,7 +1993,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Culinary",
       experience: "Experience required",
       website: "hr@yu-hotel.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -2056,7 +2007,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Driving licence + badge",
       experience: "Experience required",
       website: "hr@yu-hotel.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -2070,7 +2021,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Engineering",
       experience: "Experience required",
       website: "hr@yu-hotel.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -2084,7 +2035,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Trade skill",
       experience: "Experience required",
       website: "hr@yu-hotel.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -2098,7 +2049,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Trade skill",
       experience: "Experience required",
       website: "hr@yu-hotel.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -2112,7 +2063,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Trade skill",
       experience: "Experience required",
       website: "hr@yu-hotel.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -2154,7 +2105,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Graduate",
       experience: "1–3 years",
       website: "8600027887",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -2168,7 +2119,7 @@ const JobListingSection: React.FC = () => {
       qualification: "Graduate",
       experience: "",
       website: "",
-      salary: "",
+      salary: "As per industry standards",
     },
 
     {
@@ -2196,7 +2147,7 @@ const JobListingSection: React.FC = () => {
       qualification: "B.Com",
       experience: "Experience preferred",
       website: "hr@myleshigh.in",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -2210,7 +2161,7 @@ const JobListingSection: React.FC = () => {
       qualification: "B.E Mechanical / Electrical",
       experience: "Fresher",
       website: "humancapital@paikane.com",
-      salary: "—",
+      salary: "As per industry standards",
     },
 
     {
@@ -2377,8 +2328,16 @@ const JobListingSection: React.FC = () => {
     <div className="job-page-wrapper">
       {/* Top banners above everything */}
       <div className="top-ad-section">
-        <img src={bookConsultation} alt="Book Consultation" className="top-ad-image" />
-        <img src={buildYourFuture} alt="Build Your Future" className="top-ad-image" />
+        <img
+          src={bookConsultation}
+          alt="Book Consultation"
+          className="top-ad-image"
+        />
+        <img
+          src={buildYourFuture}
+          alt="Build Your Future"
+          className="top-ad-image"
+        />
       </div>
 
       {/* Main job + advertisement container */}
@@ -2387,7 +2346,8 @@ const JobListingSection: React.FC = () => {
           {/* Banner above job cards */}
           <div className="featured-banner">
             <h2 className="banner-text">
-              Great Work Starts With Great Company. <span className="highlight-text">Join Them!</span>
+              Great Work Starts With Great Company.{" "}
+              <span className="highlight-text">Join Them!</span>
             </h2>
           </div>
 
@@ -2398,16 +2358,29 @@ const JobListingSection: React.FC = () => {
               <div className="job-details">
                 <h3>{job.title}</h3>
                 <div className="job-meta">
-                  <span><FaBuilding /> {job.company}</span>
-                  <span><FaMapMarkerAlt /> {job.location}</span>
-                  <span><FaCalendarAlt /> {job.experience}</span>
-                  <span><FaRupeeSign /> {job.salary}</span>
+                  <span>
+                    <FaBuilding /> {job.company}
+                  </span>
+                  <span>
+                    <FaMapMarkerAlt /> {job.location}
+                  </span>
+
+                  <span>
+                    <FaCalendarAlt /> {job.experience}
+                  </span>
+
+                  <span>
+                    <FaRupeeSign /> {job.salary}
+                  </span>
                 </div>
                 <p>{job.description}</p>
 
                 <div className="job-actions">
                   <button className="apply-btn">Apply Now</button>
-                  <button className="share-btn" onClick={() => handleShare(job.title, job.company)}>
+                  <button
+                    className="share-btn"
+                    onClick={() => handleShare(job.title, job.company)}
+                  >
                     <FaShareAlt /> Share
                   </button>
                 </div>
@@ -2415,7 +2388,9 @@ const JobListingSection: React.FC = () => {
             </div>
           ))}
 
-          <button className="more-btn" onClick={openModal}>Show More</button>
+          <button className="more-btn" onClick={openModal}>
+            Show More
+          </button>
         </div>
 
         {/* Vertical divider */}
@@ -2434,17 +2409,28 @@ const JobListingSection: React.FC = () => {
 
       {/* Modal: similar jobs */}
       {isModalOpen && (
-        <div className="modal-overlay" role="dialog" aria-modal="true" aria-label="More jobs">
+        <div
+          className="modal-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label="More jobs"
+        >
           <div className="modal-content">
             <div className="modal-header">
               <h3>More Jobs</h3>
-              <button className="modal-close-btn" onClick={closeModal} aria-label="Close modal">
+              <button
+                className="modal-close-btn"
+                onClick={closeModal}
+                aria-label="Close modal"
+              >
                 ✕
               </button>
             </div>
 
             <div className="modal-body">
-              <p className="modal-subtext">Here are more jobs you might be interested in:</p>
+              <p className="modal-subtext">
+                Here are more jobs you might be interested in:
+              </p>
 
               <div className="modal-job-list">
                 {similarJobs.map((sjob, i) => (
@@ -2461,7 +2447,9 @@ const JobListingSection: React.FC = () => {
                       <div className="modal-job-salary">{sjob.salary}</div>
                       <button
                         className="apply-btn small"
-                        onClick={() => alert(`Apply for ${sjob.title} at ${sjob.company}`)}
+                        onClick={() =>
+                          alert(`Apply for ${sjob.title} at ${sjob.company}`)
+                        }
                       >
                         Apply
                       </button>
@@ -2472,7 +2460,9 @@ const JobListingSection: React.FC = () => {
             </div>
 
             <div className="modal-footer">
-              <button className="more-btn" onClick={closeModal}>Close</button>
+              <button className="more-btn" onClick={closeModal}>
+                Close
+              </button>
             </div>
           </div>
         </div>
